@@ -1,0 +1,26 @@
+body {
+    background-color:hotpink;
+    font-size:25px;
+}
+
+
+p {
+    font-size:25px;
+    background-color:aquamarine;
+    border:10px solid;
+    padding: 50px;
+    margin: 50px;
+    height: 200px;
+    color:rgba(255,0,0, 15);
+    overflow:auto;
+    /*hello commentor*/
+}
+
+.banner{
+    background-color:rgb(255, 247, 132);
+}
+
+
+img {
+    max-width:100%;
+}

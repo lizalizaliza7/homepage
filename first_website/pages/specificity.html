@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>specificity</title>
+        <link rel="stylesheet" ref="../assets/specificity.css">
+        /* embedded styles are least specific, imbdedded styles are more specific but less then inline sytles, written within elements*/
+        
+        <style>
+            header {
+                background: lightgreen;
+            }
+        </style>
+    </head> 
+
+    <body>
+        <h1>Specificity</h1>
+
+        /*inline styles are the most specific, written right next to the element*/
+        <header style="background:lightcoral">
+            Stylesheet Spececifity <br> 
+            tag < class < id
+            external < embedded < inline
+        </header>
+
+        <main>
+            Identifier Specicifity
+        </main class="class">
+
+        <footer>
+            Location Specicifity
+        </footer>
+    </body>
+
+
+</html>

@@ -1,0 +1,36 @@
+body {
+    background-color:darksalmon;
+}
+
+/* external styles are the least specific.*/
+header {
+    background: cadetblue;
+    margin: 20px;
+}
+
+/*default tags are least specific*/
+main {
+    background: red;
+    margin: 20px;
+}
+
+/*classes are more specific then default tags, but less then ids*/
+.class {
+    background: pink;
+}
+
+/* ids are the most specific */
+#id {
+    background: yellowgreen;
+}
+
+footer {
+    background: purple;
+    margin: 20px;
+    padding: 20px;
+}
+
+/* this style is more specific because it's lower on the page.*/
+footer {
+    background: orange;
+}
