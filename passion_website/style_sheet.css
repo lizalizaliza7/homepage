@@ -8,6 +8,87 @@ body {
 
 }
 
+h1 {
+  font-size: 100px;
+  color:rgb(113, 58, 34);
+  font-family: 'Brush Script MT', cursive;
+  padding: 100px;
+  margin: 50px;
+}
+
+h2 {
+  font-size: 50px;
+  color:rgb(113, 58, 34);
+  font-family: 'Brush Script MT', cursive;
+  padding: 30px;
+  margin: 10px;
+}
+
+summary {
+  font-family: 'Brush Script MT', cursive;
+  font-size: 30px;
+  color:deeppink;
+}
+
   .invisible-border {
   border: 100px solid transparent;
+}
+
+.text-box {
+  background-color: #f4f4f4; /* The box color */
+  padding: 20px;             /* Creates space around the text inside the box */
+  border: 10px solid #333;    /* Optional: adds an outline */
+  color: #111; 
+}
+
+.dropdown-container {
+  max-width: 100%;
+}
+
+.img {
+  max-width: 100%;
+}
+
+p {
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: bold;
+  border: 5px dashed brown;
+  background-color:blanchedalmond;
+  padding: 30px;
+  max-width: 600px;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+h3 {
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: bold;
+  padding: 40px;
+}
+
+media-container {
+  display: flex;
+  align-items: center; /* Vertically centers the text with the image */
+  gap: 20px;           /* Creates a clean gap between the image and text */
+  max-width: 600px;    /* Optional: Limits the total width of the block */
+  margin: 20px auto;   /* Centers the layout on your page */
+}
+
+/* Optional styling to ensure the image behaves nicely */
+.media-image {
+  width: 150px;
+  height: auto;
+  border-radius: 8px;
+}
+
+/* Optional styling to make the text look like a distinct "box" */
+.text-box {
+  padding: 15px;
+  background-color: #f4f4f4;
+  border: 1px solid #ddd;
+  border-radius: 8px;
 }

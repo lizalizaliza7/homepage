@@ -1,6 +1,6 @@
 body {
     background-color: white;
-    background-image: url(living\ room\ background.png);
+    background-image: url(bedroom.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
@@ -30,4 +30,15 @@ p{
     background-color: aliceblue;
     width: 250px;
     margin: 30px;
+}
+
+img{
+    max-width: 500px;
+    padding: 20px;
+}
+
+.nav-link {
+    color:aliceblue;
+    padding: 20px;
+    margin: 20px;
 }
