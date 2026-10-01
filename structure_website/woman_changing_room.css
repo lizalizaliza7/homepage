@@ -1,0 +1,17 @@
+
+body {
+    background: url("wood_floor.png");
+}
+
+.top {
+    display: flex;
+    width:10%;
+    justify-content:flex-start;
+}
+
+.bottom {
+    display:flex;
+    justify-content:center;
+    width: 15%;
+    padding: 50px;
+}
