@@ -1,0 +1,49 @@
+* {
+    box-sizing:border-box;
+}
+    
+img {
+    max-width:100%;
+}
+
+body {
+    background:lightgoldenrodyellow;
+    transition: background .5s;
+}
+
+.responsive {
+    background:purple;
+    padding:20px;
+    margin-bottom:10px;
+    max-width:700px;
+
+    transition: all 1s;
+}
+
+/* min-width = mobile first, media queries get progressively larger */
+/* max-width = desktop first, media queries get progressivley smaller */
+
+
+@media screen and (min-width:600px) {
+    body {
+        background:lightblue;
+    }
+
+.responsive {
+    background:lightgreen;
+    border:10px solid darkslateblue;
+    }
+}
+
+/* when are screen is larger then 1000px wide, the styles below will be applied, layered on top of previous styles.*/
+@media screen and (min-width:1000px) {
+    body {
+        background:lightsalmon;
+    }
+
+    .responsive {
+        font-size:150%;
+        padding:50px;
+    }
+}
+
