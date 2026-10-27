@@ -1,0 +1,114 @@
+<!DOCTYPE html!>
+<html>
+    <head>
+       <title>Rhythm 0: Track 2</title>
+        <link rel="stylesheet" href="main.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="UTF-8">
+    </head>
+
+
+
+    <body>
+    <div class="container">
+      <div class="left-flex-container"> 
+<div class="flex-item-one">
+  <input type="checkbox" id="myToggle" class="toggle-checkbox">
+  <label for="myToggle" class="toggle-label">
+    <img src="perfume.png" alt="Turn On">
+  </label>
+  <button id="toggleBtn">Perfume</button>
+  <img id="perfumeImg" src="effect_perfume.png" style="display:none;" alt="Perfume">
+</div>
+
+<div class="flex-item-two">
+  <input type="checkbox" id="myToggle" class="toggle-checkbox">
+  <label for="myToggle" class="toggle-label">
+    <img src="honey.png" alt="Turn On">
+  </label>
+  <button id="toggleBtn">Honey</button>
+  <img id="honeyImg" src="effect_honey.png" style="display:none;" alt="Honey">
+</div>
+
+<div class="flex-item-three">
+  <input type="checkbox" id="myToggle" class="toggle-checkbox">
+  <label for="myToggle" class="toggle-label">
+    <img src="bow.png" alt="Turn On">
+  </label>
+  <button id="toggleBtn">Bow</button>
+  <img id="bowImg" src="bow.png" style="display:none;" alt="Bow">
+</div>
+</div>
+          
+
+
+    <div class="center-flex-container"> 
+      <img src="transparent man.png" alt="flex-image">
+      </div>
+
+
+
+<div class="right-flex-container"> 
+  <div class="flex-item-four">
+  <input type="checkbox" id="myToggle" class="toggle-checkbox">
+  <label for="myToggle" class="toggle-label">
+    <img src="chains.png" alt="Turn On">
+  </label>
+  <button id="toggleBtn">Chains</button>
+  <img id="chainsImg" src="effect_chain.png" style="display:none;" alt="Chain">
+</div>
+
+<div class="flex-item-five">
+  <input type="checkbox" id="myToggle" class="toggle-checkbox">
+  <label for="myToggle" class="toggle-label">
+    <img src="gun.png" alt="Turn On">
+  </label>
+  <button id="toggleBtn">Gun</button>
+  <img id="gunImg" src="effect_gunshot.png" style="display:none;" alt="Gun">
+</div>
+
+<div class="flex-item-six">
+  <input type="checkbox" id="myToggle" class="toggle-checkbox">
+  <label for="myToggle" class="toggle-label">
+    <img src="chainsaw.png" alt="Turn On">
+  </label>
+  <button id="toggleBtn">Chainsaw</button>
+  <img id="chainsawImg" src="effect_chainsaw.png" style="display:none;" alt="Chainsaw">
+</div>
+
+
+
+
+
+
+          <script>
+  const btn = document.getElementById('toggleBtn');
+  const img = document.getElementById('perfumeImg');
+
+  btn.addEventListener('click', () => {
+    if (img.style.display === 'none') {
+      img.style.display = 'block'; // Show image
+    } else {
+      img.style.display = 'none';  // Hide image
+    }
+  });
+</script>
+
+  
+<script>
+  const button = document.getElementById('toggleBtn');
+  const image = document.getElementById('effect.perfume.png');
+
+  button.addEventListener('click', () => {
+    if (image.style.display === 'none') {
+      image.style.display = 'block';       // Show the image
+      button.textContent = 'Hide';  // Optional: Change button text
+    } else {
+      image.style.display = 'none';        // Hide the image
+      button.textContent = 'Perfume';  // Optional: Reset button text
+    }
+  });
+    </script> 
+    </body><div>
+    </body>
+</html>

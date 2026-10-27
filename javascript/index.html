@@ -1,0 +1,48 @@
+<!DOCTYPE html!>
+<html>
+    <head>
+       <title></title>
+        <link rel="stylesheet" href="main.css">
+        <meta name="viewport" content="width=device-        width, initial-scale=1.0">
+        <meta charset="UTF-8">
+
+        <title>javascript</title>
+        <link rel="stylesheet" href="main.css">
+    </head>
+
+
+    <body>
+        <button onclick="change()">menu</button>
+        <button onclick="glow()">glow</button>
+
+        <div class="menu">
+            Hello World!
+        </div>
+
+        <div class="gear"></div>
+       
+
+
+
+        <script>
+            var gear = document.querySelector(".gear");
+/* basically shorthand, "gear" replaces the whole line*/
+            var menu = document.querySelector(".menu");
+
+        function change() {
+        console.log('it works!');
+        menu.classList.toggle("active");
+/* the "document" line above is our targeting method.
+"active" is the toggle method. */
+        gear.classList.toggle("spin");
+        document.body.classList.toggle("dark");
+        }
+
+        function glow() {
+            console.log ("we're glowing!");
+            gear.classList.toggle("glow");
+            menu.classList.toggle("glow");
+        }
+        </script>
+    </body>
+</html>
