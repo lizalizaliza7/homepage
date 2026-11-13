@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Photobooth - Your Strip</title>
+  <style>
+    body { font-family: system-ui, sans-serif; text-align: center; background: #111; color: #fff; padding: 2rem; }
+    #strip { display: flex; flex-direction: column; gap: 12px; width: 260px; margin: 1.5rem auto; background: #fff; padding: 14px 14px 44px; border-radius: 4px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+    #strip img { width: 100%; border-radius: 2px; display: block; }
+    .actions { display: flex; gap: 12px; justify-content: center; margin-top: 1.5rem; }
+    button { padding: 12px 24px; font-size: 1rem; cursor: pointer; border-radius: 8px; border: none; font-weight: bold; }
+    .btn-retake { background: #2f3542; color: #fff; }
+  </style>
+</head>
+<body>
+  <h2>Your Photostrip</h2>
+  <div id="strip"></div>
+
+  <div class="actions">
+    <button class="btn-retake" onclick="window.location.href='index.html'">Retake Photos</button>
+  </div>
+
+  <script>
+    const stripContainer = document.getElementById('strip');
+    const savedData = sessionStorage.getItem('photobooth_strip');
+
+    if (!savedData) {
+      // Send user back if they opened strip.html directly without taking photos
+      window.location.href = 'index.html';
+    } else {
+      const photos = JSON.parse(savedData);
+      photos.forEach(dataUrl => {
+        const img = document.createElement('img');
+        img.src = dataUrl;
+        stripContainer.appendChild(img);
+      });
+    }
+  </script>
+</body>
+</html>

@@ -13,3 +13,11 @@ $(".reveal-btn").click(
         $(".nurse").toggleClass("reveal");
     }
 );
+
+$(".draggable").draggable({
+    containment: ".container",
+    scroll: false, 
+    snap: true,
+    grid: [40, 40],
+    stack: ".draggable"
+});

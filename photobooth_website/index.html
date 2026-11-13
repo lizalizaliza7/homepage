@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Photobooth - Camera</title>
+  <style>
+    body { font-family: system-ui, sans-serif; text-align: center; background-image: url("background.jpg"); color: #ff7777; padding: 2rem; }
+    .booth { position: relative; display: inline-block; }
+    video { width: 1080px; max-width: 100%; border-radius: 12px; transform: scaleX(-1); background: #000; }
+    #countdown { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 5rem; font-weight: bold; text-shadow: 0 4px 12px rgba(0,0,0,0.8); }
+    button { margin-top: 1rem; padding: 12px 24px; font-size: 1rem; cursor: pointer; border-radius: 8px; border: none; background: #ff4757; color: white; font-weight: bold; }
+    button:disabled { background: #555; cursor: not-allowed; }
+  </style>
+</head>
+ <script src="main.js"></script>
+<body>
+  <div class="booth">
+    <video id="video" autoplay playsinline></video>
+    <div id="countdown"></div>
+  </div>
+  <br>
+  <button id="snap">Take 3-Photo Strip</button>
+  <canvas id="canvas" style="display:none;"></canvas>
+
+  <script>
+    const video = document.getElementById('video');
+    const canvas = document.getElementById('canvas');
+    const ctx = canvas.getContext('2d');
+    const countdownEl = document.getElementById('countdown');
+    const snapBtn = document.getElementById('snap');
+
+    navigator.mediaDevices.getUserMedia({ video: true, audio: false })
+      .then(stream => { video.srcObject = stream; })
+      .catch(err => alert("Camera access denied: " + err));
+
+    const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
+
+    snapBtn.addEventListener('click', async () => {
+      snapBtn.disabled = true;
+      const capturedPhotos = [];
+      canvas.width = video.videoWidth;
+      canvas.height = video.videoHeight;
+
+      for (let i = 0; i < 3; i++) {
+        for (let sec = 3; sec > 0; sec--) {
+          countdownEl.textContent = sec;
+          await sleep(1000);
+        }
+        countdownEl.textContent = '📸';
+
+        // Flip horizontally to match preview
+        ctx.save();
+        ctx.scale(-1, 1);
+        ctx.drawImage(video, -canvas.width, 0, canvas.width, canvas.height);
+        ctx.restore();
+
+        // Save frame as compressed JPEG (smaller than PNG for storage limits)
+        capturedPhotos.push(canvas.toDataURL('image/jpeg', 0.9));
+        await sleep(500);
+      }
+
+      // Save photos to sessionStorage and redirect
+      sessionStorage.setItem('photobooth_strip', JSON.stringify(capturedPhotos));
+      window.location.href = 'strip.html';
+    });
+  </script>
+</body>
+</html>
